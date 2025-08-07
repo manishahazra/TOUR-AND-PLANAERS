@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Hotel</title>
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 50%;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 60%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        .buttons input {
+            margin-right: 10px;
+            padding: 8px 16px;
+        }
+
+        .image-container {
+            width: 45%;
+        }
+
+        .image-container img {
+            width: 130%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .price {
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function calculatePrice() {
+            const persons = parseInt(document.getElementById("persons").value);
+            const days = parseInt(document.getElementById("days").value);
+            const ac = document.getElementById("ac").value === "YES" ? 1000 : 500;
+            const food = document.getElementById("food").value === "YES" ? 500 : 0;
+            const base = 2000;
+
+            if (isNaN(persons) || isNaN(days) || persons <= 0 || days <= 0) {
+                alert("Enter valid number of persons and days.");
+                return;
+            }
+
+            const total = (base + ac + food) * persons * days;
+            document.getElementById("totalPrice").innerText = "Rs. " + total;
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>BOOK HOTEL</h2>
+        <form action="BookHotelServlet" method="post">
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Select Hotel</label>
+            <select name="hotel" required>
+                <option>Hotel Nest New Digha shankarpur</option>
+                <option>RIVA New Digha Hotel in Kanthil</option>
+                <option>Hotel Dolphin (Digha, WestBengal) </option>
+                <option> Family hotels in Digha   </option>
+                <option> Gogol Beach Resort  Mandarmoni   </option>
+                <option> Resorts in Shankarpur   </option>
+                <option> Hotel Asha Digha   </option>
+                <option> New Digha Sree Market ,. Digha   </option>
+                <option> Hotel Holiday Home , Digha   </option>
+                 <option> Digha Hotel   </option>
+                <option> Collection O Resort k Sea , Digha   </option>
+                <option> Sagar Priya Hotel , Digha   </option>
+                 <option> Super Capital O Bidisha Hotel , Digha   </option>
+                <option> Forest resorts, Kolkata   </option>
+                <option> 3 star Resorts in Bidhan Nagar Ga Block, Kolkata   </option>
+                 <option> Pride Biznotel Canopus, Digha   </option>
+                <option>  Hotel Prashant Jahaz Bari, New Digha  </option>
+                <option> Hotel Nilachal, Puri   </option>
+                 <option> Hotel Niladri , Puri  </option>
+                <option>  Hotel Kullu Manali  </option>
+                <option>  Hotel Snow Park , Manali  </option>
+                 <option>Hotel Shimla    </option>
+                <option> Homestays over high-end hotels in Himachal Pradesh   </option>
+                <option> Bravia Hotel , Manali   </option>
+                 <option>  Hotels Near Himshell Expedition and Hidden Orchads Himachal Pradesh  </option>
+                <option> Srinagar Hotel   </option>
+                <option> Grand Plaza Lords Inn, Jammu   </option>
+                 <option> The Lalit Grand Place Srinagar   </option>
+                <option> Radisson Hotel, Srinagar    </option>
+                <option> Lalit Grand Place   </option>
+                 <option> Hotels in Kashmir   </option>
+                <option> Hotel New Sea Hawk, Puri   </option>
+                <option> Hotel Puri Beach Resort(Odisha)   </option>
+                 <option> Hotel Prabhupada ,Puri   </option>
+                <option> Goroomgo Park , Puri   </option>
+                <option> Hotel Tara Place   </option>
+                 <option> Hotel New Malancha, Puri   </option>
+                <option>  Pramod Convention & Beach Resort Puri  </option>
+                <option> Hotel San Sebastian , Puri   </option>
+                <option> Hotels Puri   </option>
+                 <option> Hotel Niladri, Puri   </option>
+                <option> Nayak Group of Hotel,Puri   </option>
+                <option>  Nigeen Resort, Srinagar  </option>
+                 <option>  Swimsea Beach Resort Panaji, Goa  </option>
+                <option> Ocean Beach Hotel , California   </option>
+                <option> Swim Sea Beach Resort Hotel,Goa   </option>
+                 <option>Jack Payne and Kate Kobosko’s    </option>
+                <option> Sandals Royals Bahamian , Canada   </option>
+                <option> Atlantic Avenue Daytona Beach   </option>
+                 <option>  Sunny Isles Beach, Florida  </option>
+                <option> White Villa   </option>
+            </select>
+
+           
+            <label>Total Persons</label>
+            <input type="number" name="persons" id="persons" value="1" min="1" required>
+
+            <label>Number of Days</label>
+            <input type="number" name="days" id="days" value="1" min="1" required>
+
+            <label>AC</label>
+            <select name="ac" id="ac">
+                <option>YES</option>
+                <option>NO</option>
+            </select>
+
+            <label>Food Included</label>
+            <select name="food" id="food">
+                <option>YES</option>
+                <option>NO</option>
+            </select>
+
+            <label>ID Document</label>
+            <select name="id_type" required>
+                <option>Aadhar Card</option>
+                <option>Voter Card</option>
+                <option>Pan Card</option>
+                <option>Driving License</option>
+                <option>Passport</option>
+                <option>Office I Card</option>
+                <option>Others</option>
+            </select>
+
+            <label>Room Number</label>
+            <input type="text" name="room" required>
+
+            <label>Phone Number</label>
+            <input type="text" name="phone" required>
+
+            <!-- ✅ NEW: Booking Date Field -->
+            <label>Booking Date</label>
+            <input type="date" name="booking_date" required>
+
+            <label>Total Price</label>
+            <p class="price" id="totalPrice">Rs. 0</p>
+
+            <div class="buttons">
+                <input type="button" value="Check Price" onclick="calculatePrice()">
+                <input type="submit" value="Booking Now" style="background-color:red;color:white;">
+                <input type="button" value="Back" onclick="history.back();">
+            </div>
+        </form>
+    </div>
+
+    <div class="image-container">
+        <img src="d23.jpg" alt="Hotel Image" />
+    </div>
+</body>
+</html>

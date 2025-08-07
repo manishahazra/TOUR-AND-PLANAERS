@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forget Password</title>
+  <style>
+    body {
+      background-color: #111;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      background-color: #444;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      margin-right: 30px;
+    }
+
+    label {
+      margin: 5px 0 2px;
+    }
+
+    input[type="text"] {
+      width: 250px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .row input {
+      flex: 1;
+    }
+
+    .row button {
+      margin-left: 10px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: navy;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .image-section img {
+      width: 700px;
+      height: 600px;
+    }
+
+    .back-button {
+      width: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="form-section" action="Forget" method="post">
+      <label>Username</label>
+      <div class="row">
+        <input type="text" name="username" required>
+        <button type="submit" name="action" value="search">Search</button>
+      </div>
+
+      <label>Name</label>
+      <input type="text" name="name" >
+
+      <label>Your Security Question</label>
+      <input type="text" name="security_question" >
+
+      <label>Answer</label>
+      <div class="row">
+        <input type="text" name="answer" >
+        <button type="submit" name="action" value="retrieve">Retrieve</button>
+      </div>
+
+      <label>Password</label>
+      <input type="text" name="password" readonly>
+
+      <button type="submit" name="action" value="back" class="back-button">BACK</button>
+    </form>
+
+    <div class="image-section">
+      <img src="lock.jpg" alt="Lock">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Customer</title>
+    <style>
+        body {
+            background-color: #D2691E;
+            font-family: Arial, sans-serif;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            background-color: #48D1CC;
+            padding: 30px;
+        }
+        form {
+            margin-right: 30px;
+        }
+        input, select {
+            width: 200px;
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .gender-label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn {
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: black;
+            border: 1px solid pink;
+            color: white;
+            cursor: pointer;
+        }
+        img {
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="AddCustomerServlet2" method="post">
+        <h1> Add Customer Details </h1>
+        <label>Customer ID</label><br>
+        <input type="number" name="customerid"><br>
+        <label>Name</label><br>
+        <input type="text" name="customername"><br>
+        <label>Age</label><br>
+        <input type="number" name="customerage"><br>
+        <label>Customer Document</label><br>
+        <select name="iddocument">
+            <option value="Passport">Passport</option>
+            <option value="Aadhar">Aadhar Card</option>
+            <option value="Voter ID">Voter ID</option>
+            <option value="Pan Card">Pan Card</option>
+            <option value="Driving License">Driving License</option>
+            <option value="Office I Card">Office I Card</option>
+            <option value="Others">Others</option>
+        </select><br>
+        <label>Address</label><br>
+        <input type="text" name="customeraddress"><br>
+        <label>Phone/Mobile Number</label><br>
+        <input type="number" name="customerphoneno"><br>
+        
+        <label>Package Name</label><br>
+        <input type="text" name="packagename"><br>
+        <label>Gender</label><br>
+        <label class="customergender-label"><input type="radio" name="customergender" value="Male"> Male</label>
+        <label class="customergender-label"><input type="radio" name="customergender" value="Female"> Female</label><br>
+       
+        <label>Religion</label><br>
+        <input type="text" name="customerreligion"><br>
+        <label>Caste</label><br>
+        <input type="text" name="customercaste"><br>
+         <label>Country</label><br>
+        <input type="text" name="country"><br>
+        <label>Email</label><br>
+        <input type="text" name="emailaddress"><br>
+        <label>Qualification</label><br>
+        <input type="text" name="customerqualification"><br>
+        <input class="btn" type="submit" value="Add">
+        <input class="btn" type="reset" value="Reset">
+        <input type="button" value="Back" onclick="history.back();">
+    </form>
+    <img src="TRAVEL2.jpg" alt="Travel Image">
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gold Package</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      background-color: white;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 1000px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+    }
+
+    .features {
+      width: 50%;
+    }
+
+    .features h1 {
+      color: #333;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .features p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .features p.red {
+      color: red;
+    }
+
+    .features p.blue {
+      color: blue;
+    }
+
+    .book-btn {
+      margin-top: 20px;
+      font-size: 20px;
+      background-color: blue;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .book-btn:hover {
+      background-color: darkblue;
+    }
+
+    .right {
+      width: 45%;
+    }
+
+    .right img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: red;
+    }
+
+    .price {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="features">
+      <h1>GOLD PACKAGE</h1>
+      <p class="red">9 Days and 10 Nights</p>
+      <p class="blue">Airport Assistance</p>
+      <p class="red">Half Day City Tour</p>
+      <p class="blue">Daily Buffet</p>
+      <p class="red">Welcome Drinks on Arrival</p>
+      <p class="blue">Full Day 3 Island Cruise</p>
+      <p class="red">English Speaking Guide</p>
+
+      <form action="BookPackageServlet1" method="post">
+        <input type="hidden" name="username" value="customer">
+        <input type="hidden" name="packagename" value="Gold Package">
+        <input type="hidden" name="price" value="60000">
+        <input type="hidden" name="days" value="9 Days and 10 Nights">
+        <button type="submit" class="book-btn">BOOK NOW</button>
+      </form>
+    </div>
+
+    <div class="right">
+      <img src="beach.jpg" alt="Scenic beach view">
+    </div>
+  </div>
+
+  <div class="footer">
+    SUMMER SPECIAL <span class="price">Rs 60000/-</span>
+  </div>
+</body>
+</html>

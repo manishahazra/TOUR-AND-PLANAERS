@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Package</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+    }
+    .form-container {
+      width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+    }
+    .btn {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <form action="BookPackageServlet1" method="post">
+    <h2>Book Your Travel Package</h2>
+    
+    <label>Booking ID:</label>
+    <input type="text" name="booking_id" required>
+    
+    <label>Customer ID:</label>
+    <input type="text" name="customer_id" required>
+
+    <label>Customer Name:</label>
+    <input type="text" name="customer_name" required>
+
+    <label>Phone Number:</label>
+    <input type="text" name="phone" required>
+
+    <label>Total Persons:</label>
+    <input type="number" name="total_persons" id="total_persons" required oninput="calculateTotalPrice()">
+
+    <label>Booking Date:</label>
+    <input type="date" name="booking_date" required>
+
+    <label>Package:</label>
+    <select name="package_name" id="package_name" onchange="loadPriceOffer()" required>
+      <option value="">Select Package</option>
+      <option value="Gold Package">Gold Package</option>
+      <option value="Silver Package">Silver Package</option>
+      <option value="Bronze Package">Bronze Package</option>
+    </select>
+
+    <label>Price per Person:</label>
+    <input type="number" name="price" id="price" readonly required>
+
+    <label>Offer:</label>
+    <input type="text" name="offer" id="offer" readonly required>
+
+    <label>Total Price:</label>
+    <input type="number" name="total_price" id="total_price" readonly required>
+
+    <input type="submit" value="Book Now" class="btn">
+  </form>
+</div>
+
+<script>
+function loadPriceOffer() {
+  var pkg = document.getElementById("package_name").value;
+  var priceField = document.getElementById("price");
+  var offerField = document.getElementById("offer");
+
+  if (pkg === "Gold Package") {
+    priceField.value = 20000;
+    offerField.value = "15% OFF";
+  } else if (pkg === "Silver Package") {
+    priceField.value = 15000;
+    offerField.value = "10% OFF";
+  } else if (pkg === "Bronze Package") {
+    priceField.value = 10000;
+    offerField.value = "5% OFF";
+  } else {
+    priceField.value = "";
+    offerField.value = "";
+  }
+
+  calculateTotalPrice();
+}
+
+function calculateTotalPrice() {
+  var persons = parseInt(document.getElementById("total_persons").value) || 0;
+  var price = parseInt(document.getElementById("price").value) || 0;
+  document.getElementById("total_price").value = persons * price;
+}
+</script>
+
+</body>
+</html>

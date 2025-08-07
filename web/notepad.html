@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notepad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    .header {
+      background-color: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    textarea {
+      width: 98%;
+      height: 750px;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      resize: none;
+    }
+
+    .buttons {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 0 8px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .save { background-color: #28a745; color: white; }
+    .load { background-color: #007bff; color: white; }
+    .clear { background-color: #dc3545; color: white; }
+    .download { background-color: #ffc107; color: black; }
+  </style>
+</head>
+<body>
+
+  <div class="header">📝  Notepad</div>
+
+  <div class="container">
+    <textarea id="notepad" placeholder="Start typing your notes here..."></textarea>
+
+    <div class="buttons">
+      <button class="save" onclick="saveNote()">💾 Save</button>
+      <button class="load" onclick="loadNote()">📂 Load</button>
+      <button class="clear" onclick="clearNote()">🗑 Clear</button>
+      <button class="download" onclick="downloadNote()">⬇️ Download</button>
+    </div>
+  </div>
+
+  <script>
+    function saveNote() {
+      const text = document.getElementById("notepad").value;
+      localStorage.setItem("myNote", text);
+      alert("Note saved successfully!");
+    }
+
+    function loadNote() {
+      const savedText = localStorage.getItem("myNote");
+      if (savedText) {
+        document.getElementById("notepad").value = savedText;
+        alert("Note loaded!");
+      } else {
+        alert("No saved note found.");
+      }
+    }
+
+    function clearNote() {
+      if (confirm("Are you sure you want to clear the note?")) {
+        document.getElementById("notepad").value = "";
+      }
+    }
+
+    function downloadNote() {
+      const text = document.getElementById("notepad").value;
+      const blob = new Blob([text], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "mynote.txt";
+      link.click();
+    }
+  </script>
+
+</body>
+</html>

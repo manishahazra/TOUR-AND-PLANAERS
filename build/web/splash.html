@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel And Tourism Application</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .logo-circle {
+      width: 300px;
+      height: 300px;
+      background-color: #2056B3;
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 5px solid white;
+    }
+
+    .logo-circle h1 {
+      margin: 0;
+      font-size: 80px;
+    }
+
+    .logo-circle h2 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .logo-circle p {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .progress-bar {
+      width: 400px;
+      height: 30px;
+      background-color: black;
+      border-radius: 5px;
+      margin: 30px auto;
+      overflow: hidden;
+      color: white;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: blue;
+      width: 0%;
+      line-height: 30px;
+    }
+
+    .footer {
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+      margin-top: 20px;
+    }
+
+    .footer span {
+      font-size: 18px;
+    }
+
+    .right {
+      color: blue;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body onload="startProgress()">
+  <div class="container">
+    <h1>Welcome Travel And Tourism Application</h1>
+
+    <div class="logo-circle">
+      <h1>Travel</h1>
+      <h2>And</h2>
+       <h2>Tourism</h2>
+       </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress">0%</div>
+    </div>
+    <div class="center">
+        <span class="right-panel"> <h2>Please Wait...................</span></h2>
+          </div>
+  </div>
+  <script>
+    function startProgress() {
+      let progress = 0;
+      let bar = document.getElementById("progress");
+
+      let interval = setInterval(() => {
+        if (progress >= 100) {
+          clearInterval(interval);
+          // Optionally redirect to homepage
+          window.location.href = "Dashboard.html";
+        } else {
+          progress++;
+          bar.style.width = progress + "%";
+          bar.innerText = progress + "%";
+        }
+      }, 50);
+    }
+  </script>
+</body>
+</html>

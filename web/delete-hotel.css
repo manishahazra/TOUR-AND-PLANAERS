@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    padding: 40px;
+}
+
+.left-section h2 {
+    margin-bottom: 30px;
+}
+
+.left-section p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.btn {
+    padding: 8px 20px;
+    margin: 20px 10px 0 0;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: darkred;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.right-section img {
+    width: 60%;
+    max-height: 80%;
+    object-fit: contain;
+}

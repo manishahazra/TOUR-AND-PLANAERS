@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Package</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 30px;
+    }
+
+    .container {
+      background-color: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Book Your Package</h2>
+    <form action="BookPackageServlet1" method="post">
+      <label for="booking_id">Booking ID:</label>
+      <input type="text" name="booking_id" id="booking_id" required>
+
+      <label for="customer_id">Customer ID:</label>
+      <input type="text" name="customer_id" id="customer_id" required>
+
+      <label for="customer_name">Customer Name:</label>
+      <input type="text" name="customer_name" id="customer_name" required>
+
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" id="phone" required>
+
+      <label for="total_persons">Total Persons:</label>
+      <input type="number" name="total_persons" id="total_persons" required>
+
+      <label for="booking_date">Booking Date:</label>
+      <input type="date" name="booking_date" id="booking_date" required>
+
+      <label for="package_name">Package Name:</label>
+      <input type="text" name="package_name" id="package_name" value="Gold Package" required>
+
+      <label for="price">Price per Person:</label>
+      <input type="number" name="price" id="price" value="60000" required>
+
+      <label for="offer">Offer:</label>
+      <input type="text" name="offer" id="offer" value="Summer Special">
+
+      <label for="total_price">Total Price:</label>
+      <input type="number" name="total_price" id="total_price" required>
+
+      <button type="submit" class="submit-btn">Submit Booking</button>
+    </form>
+  </div>
+
+</body>
+</html>

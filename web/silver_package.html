@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gold Package</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      background-color: white;
+      margin: 50px auto;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+    }
+    .features {
+      width: 50%;
+    }
+    .features h1 {
+      color: #333;
+    }
+    .features p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .features p.red {
+      color: red;
+    }
+    .features p.blue {
+      color: blue;
+    }
+    .book-btn {
+      margin-top: 20px;
+      font-size: 22px;
+      color: blue;
+      cursor: pointer;
+    }
+    .right {
+      width: 45%;
+    }
+    .right img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 24px;
+      color: red;
+    }
+    .price {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="features">
+      <h1>SILVER PACKAGE</h1>
+      <p class="red">6 days and 7 Nights</p>
+      <p class="blue">Airport Assistance</p>
+      <p class="red">Half Day City Tour</p>
+      <p class="blue">Daily Buffet</p>
+      <p class="red">Welcome Drinks on Arrival</p>
+      <p class="blue">Full Day 3 Island Cruise</p>
+      <p class="red">English Speaking Guide</p>
+      <div class="book-btn" onclick="bookNow()">BOOK NOW</div>
+    </div>
+    <div class="right">
+      <img src="hill.jpg" alt="Hill View" />
+    </div>
+  </div>
+  <div class="footer">
+    SUMMER SPECIAL <span class="price">Rs 45000/-</span>
+  </div>
+
+  <script>
+    function bookNow() {
+      window.location.href = "BookPackageServlet1";
+    }
+  </script>
+</body>
+</html>

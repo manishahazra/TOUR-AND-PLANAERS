@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gold Package</title>
+  <link rel="stylesheet" href="style8.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h2>GOLD PACKAGE</h2>
+      <ul>
+        <li class="red">6 days and 7 Nights</li>
+        <li class="blue">Airport Assistance</li>
+        <li class="red">Half Day City Tour</li>
+        <li class="blue">Daily Buffet</li>
+        <li class="red">Welcome Drinks on Arrival</li>
+        <li class="blue">Full Day 3 Island Cruise</li>
+        <li class="red">English Speaking Guide</li>
+      </ul>
+      <form action="BookServlet" method="post">
+        <input type="hidden" name="package" value="Gold Package" />
+        <button class="book-btn">BOOK NOW</button>
+      </form>
+    </div>
+    <div class="right-section">
+      <img src="beach.jpg" alt="Gold Package" />
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>SUMMER SPECIAL</span>
+    <span class="price">Rs 32000/-</span>
+  </div>
+</body>
+</html>

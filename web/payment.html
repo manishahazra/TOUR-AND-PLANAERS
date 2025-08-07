@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UPI Payment</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+  <div class="payment-container">
+    <h2>UPI Payment Method</h2>
+      <div class="payment-methods">
+      <div class="method" onclick="selectMethod('Paytm')">
+           <br><br><br><br><br><br>
+          <img src="paytm.jpg" style="width: 50px; height: 50px;" /><br>
+        <span>Paytm</span>
+      </div>
+      <div class="method" onclick="selectMethod('GooglePay')">
+         <img src="GPay.jpg" style="width: 50px; height: 50px;" /><br>
+        <span>Google Pay</span>
+      </div>
+      <div class="method" onclick="selectMethod('AmazonPay')">
+        <img src="amazonpay.jpg" style="width: 50px; height: 50px;" /><br>
+        <span>Amazon Pay</span>
+      </div>
+      <div class="method" onclick="selectMethod('PhonePe')">
+        <img src="PhonePe.jpg" style="width: 50px; height: 50px;" /><br>
+        <span>PhonePe</span>
+      </div>
+    </div>
+
+    <div class="upi-form">
+         <br><br><br><br><br><br>
+      <label for="upiId">Enter your UPI ID:</label>
+      <input type="text" id="upiId" placeholder="example@upi">
+      <button onclick="payNow()">Pay Now</button>
+      <p id="statusMsg"></p>
+    </div>
+  </div>
+
+  <script src="paymentscript.jsp"></script>
+</body>
+</html>

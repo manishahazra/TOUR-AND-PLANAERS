@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.payment-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.method {
+  flex: 1 1 45%;
+  border: 2px solid transparent;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f8f8f8;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.method:hover {
+  border-color: #007bff;
+  background: #e6f0ff;
+}
+
+.method img {
+  height: 50px;
+  width: 50px;
+}
+
+.method span {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.upi-form {
+  margin-top: 20px;
+}
+
+.upi-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.upi-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upi-form button:hover {
+  background: #0056b3;
+}
+
+#statusMsg {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
